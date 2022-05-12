@@ -1,6 +1,27 @@
-########################################
-#########       Docker       ###########
-####   Node.js, MongoDB application    ####
+############################################################################
+###########################       Docker       #############################
+
+- List containers
+docker container ls -a
+
+- remove container
+docker container rm <ID>
+
+- List Images
+docker images
+
+- remove image
+docker image rm <ID>
+
+- pull image
+docker pull <NAME>
+
+- nginx
+docker container run -d -p 8080:80 --name mynginx nginx
+
+
+############################################################################
+##################    Node.js, MongoDB application    ######################
 
 ### Create docker flie
 touch Dockerfile
