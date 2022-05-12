@@ -57,3 +57,7 @@ networks:
 volumes:
   mongo-data:
     driver: local
+
+### Add Makefile
+
+touch Makefile
