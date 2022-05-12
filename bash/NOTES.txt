@@ -1,0 +1,10 @@
+### bash ###
+which bash - to see bash path - /bin/bash
+
+chmod +x filename.sh
+
+######################
+#### README.md #######
+
+## new-user-ssh.sh
+Create a new Linux Ubuntu user ,dir's ,files and add a ssh key then prompt for the new user's password.
