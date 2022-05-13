@@ -1,0 +1,45 @@
+######################################################
+##############       Get Flow      ###################
+
+- Create and clone 
+clone https://github.com/brunocodes/dev-test.git
+
+## init flow ##
+git flow init
+main
+develop
+
+    - push
+get push --setup-upstream origin develop
+
+
+###### feature ######
+
+    - start
+git flow feature start feature_branch
+
+  - merge feature branch to develop branch
+git flow feature finish feature_branch
+
+
+###### release ######
+
+    - start release
+git flow release start '0.1.0'
+
+    - push
+get push --setup-upstream origin release/0.1.0
+
+
+    - finish release
+git flow release finish '0.1.0'
+    - push
+git checkout main
+git push origin
+
+###### hotfix ######
+git flow hotfix start hotfix_branch
+
+
+#############################################
+

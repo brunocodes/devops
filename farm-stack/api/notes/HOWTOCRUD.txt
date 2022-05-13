@@ -1,0 +1,20 @@
+######################################################################################################
+#######################################         CRUD           #######################################
+###################################### CRUD Standard convention ######################################
+
+Create  POST /users            @app.post("/users")        - Create new user
+
+Read    GET /users/:id         @app.get("/users/{id}")    - Get one user ny id
+        GET /users             @app.get("/users")         - Get many users
+
+Update  PUT /users/:id         @app.put("/users/{id}")    - Update all fields
+        PATCH /users/:id       @app.patch("/users/{id}")  - Update one field 
+
+Delete  DETLETE /users/:id     @app.delete("/users/{id}") - Delete user by id
+
+######################################################################################################
+######################################################################################################
+######################################################################################################
+
+## Peram String with space ##
+%20 - /search?search=miami%20hotels
