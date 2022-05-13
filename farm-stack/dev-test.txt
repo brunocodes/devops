@@ -18,9 +18,10 @@
 
 ### 1#     Python REST API
 - FastAPI
-    - API
-    - Docs
+    - CRUD API (GET, POST, DELETE, UPDATE)
     - Logging
+    - MongoDB Atlas
+    - Docs
     - Tests 
 - MongoDB Atlas 
 
@@ -44,5 +45,10 @@
     - Popup de envio com sucesso
 
 ### 3# Frontend client, Python FastAPI  Docker containers
+- FastAPI container
+- Next.js frontend container
+
+
+### 4# Docker automation (docker-compose.yml)
 - FastAPI container
 - Next.js frontend container
