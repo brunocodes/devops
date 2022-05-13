@@ -49,6 +49,5 @@
 - Next.js frontend container
 
 
-### 4# Docker automation (docker-compose.yml)
-- FastAPI container
-- Next.js frontend container
+### 4# Docker automation
+- docker-compose.yml
