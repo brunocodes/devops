@@ -14,7 +14,7 @@ main
 develop
 
     - push
-get push --setup-upstream origin develop
+git push --set-upstream origin develop
 
 
 ### feature 
@@ -32,12 +32,12 @@ git flow feature finish feature_branch
 git flow release start '0.1.0'
 
     - push
-get push --setup-upstream origin release/0.1.0
-
+git push --set-upstream origin release/0.1.0
 
     - finish release
 git flow release finish '0.1.0'
     - push
+    
 git checkout main
 git push origin
 
