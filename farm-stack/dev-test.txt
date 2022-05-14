@@ -5,16 +5,22 @@
 
 ### 0#      Get Flow
 - main (init) README.md
+
 - develop (base env) FastAPI boilerplate , Next.js
+
 - feature #1 (FastAPI)
-    - release
-    - main
+    - merge feature branch to develop branch
+
 - feature #2 (Frontend)
-    - release
-    - main
-- feature #3 (FastAPI tests)
-    - release
-    - main
+    - merge feature branch to develop branch
+
+- feature #3 (FastAPI tests, Docker containers)
+    - merge feature branch to develop branch
+
+- release branch
+    - Tests, QA
+
+- main branch
 
 ### 1#     Python REST API
 - FastAPI
@@ -23,7 +29,6 @@
     - MongoDB Atlas
     - Docs
     - Tests 
-- MongoDB Atlas 
 
 ### 2#      Next.js Frontend
 - Botáo Novo Cadastro (Nav Button)

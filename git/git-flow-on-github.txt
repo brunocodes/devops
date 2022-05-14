@@ -1,8 +1,12 @@
 ######################################################
 ##############       Get Flow      ###################
 
+- Install git-flow
+apt-get install git-flow 
+
 - Create and clone 
-clone https://github.com/brunocodes/dev-test.git
+clone https://github.com/<USER>/<REP>.git
+
 
 ## init flow ##
 git flow init
@@ -13,7 +17,7 @@ develop
 get push --setup-upstream origin develop
 
 
-###### feature ######
+### feature 
 
     - start
 git flow feature start feature_branch
