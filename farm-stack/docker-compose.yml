@@ -29,5 +29,6 @@ services:
     container_name: client-ui
     stdin_open: true
     volumes:
-       - ./client:/usr/src/app/client
-       - /usr/src/app/client/node_modules
+      - ./pages:/app/pages
+      - ./public:/app/public
+      - ./styles:/app/styles
