@@ -21,6 +21,7 @@ git push --set-upstream origin develop
 
     - start
 git flow feature start feature_branch
+git push --set-upstream origin feature/feature_branch
 
   - merge feature branch to develop branch
 git flow feature finish feature_branch
