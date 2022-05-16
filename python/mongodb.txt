@@ -1,0 +1,76 @@
+Handling MongoDB ObjectId in Python-fastAPI
+Keep it simple, but SIGNIFICANT!!
+
+I recently started exploring Python and FastAPI framework; there was a simple requirement to build an API which pulls data from MongoDB and return it as a response……way tooo simple right? Well, even I thought so when I started with it 😛
+
+I chose to use MongoDB motor to complete the requirement and the code snippet looks like below
+
+response = await app.collection.find_one({"value": val})
+return response
+and that landed me into the following issue 💥
+
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+The issue arises as it fails to serialize the ObjectId
+
+Being a newBie 🐝 to Python 🐍 , I had to google to find out the possible fixes for this issue and I came across the following
+
+Skip the _id field from mongo response
+await app.collection.find_one({"value": val},{'_id': 0})
+This wasn’t a suitable fix for me as i needed id field to be returned in the response
+
+2. Using json_util package
+
+def parse_json(data):
+    return json.loads(json_util.dumps(data))
+3. Define a custom JSONEncoder
+
+import json
+from bson import ObjectId
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+JSONEncoder().encode(analytics)
+//****Usage****
+json.encode(analytics, cls=JSONEncoder)
+4. Using helper methods
+
+def helper(data) -> dict:
+return {
+"id": str(data["_id"]),
+"value": data["value"]
+}
+//****Usage****
+response = await app.collection.find_one({"value": val})
+return helper(response)
+The challenge with helper method is, we need to maintain data schema definition at multiple places : pydantic models and helper methods
+
+After a lot of exploration and googling to find the best fix for this issue, I chose to go with the below simpler approach : replace the _id field with its Strigified version id and delete the _id field
+
+response = await app.collection.find_one({"value": val})
+response['id'] = str(response['_id'])
+del[response['_id']]
+return response
+This approach resolved the problem for me without using any additional packages or custom handlers.
+
+The above fix would work for a single record fetched from DB; but how do we handle it for multiple records? 🤔
+
+Well, one of the solution is to iterate over the list of multiple records and apply the above fix on every record — but is it performance efficient? May not be!!
+
+That’s when I thought about handling it differently! 💡
+
+How about doing this transformation (convert ObjectId to its string version) at Database layer ? It’s expected to be performance efficient as compared to doing the same at Code Layer
+
+This can be easily achieved using aggregate query of MongoDB
+
+pipeline = [ {'$project': {"id": {'$toString': "$_id"}, 
+"_id": 0,"value": 1}}]
+//pull multiple records from DB with serialized ObjectId
+app.collection.aggregate(pipeline):
+
+################################################################################################
+https://medium.com/@madhuri.pednekar/handling-mongodb-objectid-in-python-fastapi-4dd1c7ad67cd
+################################################################################################
