@@ -22,9 +22,12 @@ docker container run -d -p 8080:80 --name mynginx nginx
 - apache
 docker container run -d -p 8081:80 --name myapache httpd
 
-## 
+## Run Dockerfile
 
-docker build -t client:v1.o .
+docker build -t getting-started .
+docker build -t name:tag .
+
+docker run -dp 3000:3000 getting-started
 
 ############################################################################
 ##################    Node.js, MongoDB application    ######################

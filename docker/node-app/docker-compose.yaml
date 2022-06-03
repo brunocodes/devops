@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node-api:
+    build: ./
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_NAME=my_database
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=example
+      - MONGODB_ATLAS_USER=user
+      - DATABASE_URL=mongodb+srv://<DATABASE_USER>:<DATABASE_PASSWORD>@<MONGODB_ATLAS_USER>.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority

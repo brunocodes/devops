@@ -1,3 +1,8 @@
 venv
 client
 __pycache__
+docker-compose.yaml
+Dockerfile
+README.md
+*.env*
+.gitignore
