@@ -1,0 +1,13 @@
+- Backup/mongodump
+
+mongodump --db=my_database --archive=./my-dir/my_database.gzip --gzip
+
+- Restore/mongorestore
+
+mongorestore --db=my_database --archive=./my-dir/my_database.gzip --gzip
+
+
+- Commands
+mongo
+
+show dbs
