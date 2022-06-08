@@ -1,0 +1,11 @@
+- Copy Files from Local to Remote with SCP
+
+scp ./my_file.gzip user@00.00.00.0:/home/user/my_file.gzip
+scp ./my-file.gzip root@66.42.85.9:/my-file.gzip
+
+- How to Copy Files from Remote to Local with SCP
+
+scp user@00.00.00.0:/home/user/a-file.txt ./a-file.txt
+scp root@00.00.00.0:/a-file.txt ./a-file.txt
+
+scp -i ./my_key user@00.000.0.00:/home/user/a-file.txt ./a-file.txt
