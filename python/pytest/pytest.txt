@@ -1,0 +1,25 @@
+python -m pytest my_file_test.py
+
+
+- fixtures
+@pytest.fixture
+def test_user2(client):
+    user_data = {"id": 1,
+                 "user_name": "BrunoCodes",
+                 "email": "brunocodes@example.com",
+                 "password": "987password"}
+    res = client.post("/users", json=user_data)
+
+    assert res.status_code == 201
+
+    new_user = res.json()
+    new_user['password'] = user_data['password']
+    return new_user
+
+- parametrize
+
+@pytest.mark.parametrize("param1, param2, param3", [
+    ("param1 value", "param2 value", True),
+    ("param1 value", "param2 value", False),
+    ("param1 value", "param2 value", True),
+])
