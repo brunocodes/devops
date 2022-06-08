@@ -18,3 +18,5 @@ git checkout <branch>
 ## SSH
 
 settings > SSH
+* set remote url
+git remote set-url origin git@github.com:brunocodes/devops.git
