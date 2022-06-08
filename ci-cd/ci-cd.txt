@@ -1,0 +1,27 @@
+############################################################################
+#########################          CI/CD           #########################
+
+* Commit code/changes
+
+Continuous Integration: Automated process to build package and test applications
+* Pull source code
+* Install dependencies
+* Run tests
+* Build docker images
+
+Continuous Delivery: Pick up where continuous integration ends and Automated the delivery of applications
+* Grab images/code
+* Update production
+
+
+
+
+############################################################################
+#####################         Github actions         #######################
+
+
+
+############################################################################
+#####################          Other Tools             #####################
+* Jenkins
+* Travis CI

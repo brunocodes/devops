@@ -15,5 +15,6 @@ git switch <branch>
 git checkout <branch> 
 
 
+## SSH
 
-
+settings > SSH
