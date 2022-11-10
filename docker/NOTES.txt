@@ -29,6 +29,12 @@ docker build -t name:tag .
 
 docker run -dp 3000:3000 getting-started
 
+- exec
+
+docker exec -it container_name bash
+docker exec -it container_name sh
+ 
+
 ############################################################################
 ##################    Node.js, MongoDB application    ######################
 

@@ -1,0 +1,25 @@
+#############################################
+#####         revert push commit        #####
+#############################################
+
+* Option #1 
+revert by pushing new commit - public or shared branches
+
+git revert HEAD
+commit message 
+git push
+
+
+* Option #2 
+Delete pushed commit - Private branches
+
+git reset HEAD~1
+
+- Hard reset - Delete unstaged code
+
+git reset --hard HEAD~1
+
+- Force push 
+git push -f origin main
+
+#############################################

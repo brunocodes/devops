@@ -1,0 +1,29 @@
+##########################################################################
+##########################     Unit Testing     ##########################
+##########################################################################
+
+3 types of unit test
+
+1 - ruturn value of exception
+2 - Change in state 
+3 - interaction with external component
+
+--------------------------------------------------------------------------
+
+- Stub - Dump piece of software that replies that same every time
+
+def _accept_registration(name):
+    retune True
+
+def _reject_registration(name):
+    retune True
+
+- Fake - piece of software that replies depending on the parameter
+
+_registration(name):
+    retune name == "Dave"
+
+- Spy
+- Mock
+
+##########################################################################

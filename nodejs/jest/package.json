@@ -1,0 +1,21 @@
+{
+  "name": "jest",
+  "version": "0.0.1",
+  "description": "Express API unit testing with jest",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "jest",
+    "server": "node ./server/server.js",
+    "dev": "nodemon ./server/server.js"
+  },
+  "author": "Bruno Batista (BrunoCodes)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  }
+}
